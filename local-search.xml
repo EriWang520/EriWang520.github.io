@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2020/11/27/win10%20Anaconda%E7%8E%AF%E5%A2%83pythona%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEchromedriver/"/>
+    <url>/2020/11/27/win10%20Anaconda%E7%8E%AF%E5%A2%83pythona%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEchromedriver/</url>
+    
+    <content type="html"><![CDATA[<h1 id="win10-Anaconda环境pythona安装配置chromedriver"><a href="#win10-Anaconda环境pythona安装配置chromedriver" class="headerlink" title="win10 Anaconda环境pythona安装配置chromedriver"></a>win10 Anaconda环境pythona安装配置chromedriver</h1><p>​        因为之前写爬虫的时候遇到个坑，跟chromedriver有关，但是搜索错误的话完全搜索不到，后面自己找到的问题，在这记录一下。</p><h2 id="1、问题"><a href="#1、问题" class="headerlink" title="1、问题"></a>1、问题</h2><p>一开始我一直以为Anaconda里是有chromedriver的，这也就导致问题。写完代码后直接报错：</p><pre><code class="hljs python">hp, ht, pid, tid = _winapi.CreateProcess(executable, args, PermissionError:[WinError <span class="hljs-number">5</span>] Acess denied</code></pre><p>或者：</p><pre><code class="hljs python">hp, ht, pid, tid = _winapi.CreateProcess(executable, args, PermissionError:[WinError <span class="hljs-number">5</span>]拒绝访问</code></pre><p>都是一个意思。</p><p>然后百度找了很多，都是说python权限不够，给它加完全控制的权限，结果加了还是不行，一番搜索无果后突然搜到一篇怎么安装chromedriver的博客，我就想到不会是根本没有玩意儿吧。。。</p><h2 id="2、下载chromedriver"><a href="#2、下载chromedriver" class="headerlink" title="2、下载chromedriver"></a>2、下载chromedriver</h2><p>于是我去下载了和我chrome浏览器版本一致的chromedriver,但是观望那个进得去，下载页面却进不去。。。</p><p>然后又找到另一个资源的地址，进去也是打不开下载链接，好不容易进了资源页面，下载不了，然后用迅雷给下下来了，不得不说有时候迅雷有奇效。</p><p>后面找到两个地址：</p><p><em><a href="http://chromedriver.storage.googleapis.com/index.html">http://chromedriver.storage.googleapis.com/index.html</a></em></p><p><a href="https://npm.taobao.org/mirrors/chromedriver/">https://npm.taobao.org/mirrors/chromedriver/</a></p><p>第一个就是谷歌的，应该直接进是进不去的，第二个是淘宝的镜像地址，应该可以下，不过因为我之前是用迅雷下的，所以还没试过第二个地址有没有问题。</p><h2 id="3、配置chromedriver"><a href="#3、配置chromedriver" class="headerlink" title="3、配置chromedriver"></a>3、配置chromedriver</h2><p>下载好之后，还需要配置一下。</p><p>1、把下载的文件解压到谷歌浏览器安装目录的根目录</p><p>如果装在C盘的一般是：</p><p>C:\Users\mi\AppData\Local\Google\Chrome\Application</p><p>直接在桌面右键谷歌浏览器图标就可以进入。不过我改到D盘了。</p><p>2、然后把这个路径添加到环境变量。</p><p><img src="https://i.loli.net/2020/11/27/xhOclNfvP5dwtzR.png" alt="image-20201127100555202"></p><p>3、把解压出来的chromedriver复制一份到Anaconda3根目录就可以了，接着在代码中导入selenium然后就可以直接使用:</p><pre><code class="hljs python">browser = webdriver.Chrome(options=chrome_options)</code></pre><p>获取到chromdriver</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux命令</title>
     <link href="/2020/11/24/Linux%E5%91%BD%E4%BB%A4/"/>
     <url>/2020/11/24/Linux%E5%91%BD%E4%BB%A4/</url>
