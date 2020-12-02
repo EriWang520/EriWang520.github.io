@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>win10 Anaconda环境pythona安装配置chromedriver - MingBlog</title>
+  <title>IDEA快捷键-Windows - MingBlog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="win10 Anaconda环境pythona安装配置chromedriver">
+            <span class="h2" id="subtitle" title="IDEA快捷键-Windows">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-27 00:00" pubdate>
-        2020年11月27日 凌晨
+      <time datetime="2020-12-02 00:00" pubdate>
+        2020年12月2日 凌晨
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      521 字
+      884 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      9
        分钟
     </span>
   
@@ -224,35 +224,205 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">win10 Anaconda环境pythona安装配置chromedriver</h1>
+            <h1 style="display: none">IDEA快捷键-Windows</h1>
             
             <div class="markdown-body">
-              <h1 id="win10-Anaconda环境pythona安装配置chromedriver"><a href="#win10-Anaconda环境pythona安装配置chromedriver" class="headerlink" title="win10 Anaconda环境pythona安装配置chromedriver"></a>win10 Anaconda环境pythona安装配置chromedriver</h1><p>​        因为之前写爬虫的时候遇到个坑，跟chromedriver有关，但是搜索错误的话完全搜索不到，后面自己找到的问题，在这记录一下。</p>
-<h2 id="1、问题"><a href="#1、问题" class="headerlink" title="1、问题"></a>1、问题</h2><p>一开始我一直以为Anaconda里是有chromedriver的，这也就导致问题。写完代码后直接报错：</p>
-<div class="hljs"><pre><code class="hljs python">hp, ht, pid, tid = _winapi.CreateProcess(executable, args, PermissionError:[WinError <span class="hljs-number">5</span>] Acess denied</code></pre></div>
-
-<p>或者：</p>
-<div class="hljs"><pre><code class="hljs python">hp, ht, pid, tid = _winapi.CreateProcess(executable, args, PermissionError:[WinError <span class="hljs-number">5</span>]拒绝访问</code></pre></div>
-
-<p>都是一个意思。</p>
-<p>然后百度找了很多，都是说python权限不够，给它加完全控制的权限，结果加了还是不行，一番搜索无果后突然搜到一篇怎么安装chromedriver的博客，我就想到不会是根本没有玩意儿吧。。。</p>
-<h2 id="2、下载chromedriver"><a href="#2、下载chromedriver" class="headerlink" title="2、下载chromedriver"></a>2、下载chromedriver</h2><p>于是我去下载了和我chrome浏览器版本一致的chromedriver,但是观望那个进得去，下载页面却进不去。。。</p>
-<p>然后又找到另一个资源的地址，进去也是打不开下载链接，好不容易进了资源页面，下载不了，然后用迅雷给下下来了，不得不说有时候迅雷有奇效。</p>
-<p>后面找到两个地址：</p>
-<p><em><a target="_blank" rel="noopener" href="http://chromedriver.storage.googleapis.com/index.html">http://chromedriver.storage.googleapis.com/index.html</a></em></p>
-<p><a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/chromedriver/">https://npm.taobao.org/mirrors/chromedriver/</a></p>
-<p>第一个就是谷歌的，应该直接进是进不去的，第二个是淘宝的镜像地址，应该可以下，不过因为我之前是用迅雷下的，所以还没试过第二个地址有没有问题。</p>
-<h2 id="3、配置chromedriver"><a href="#3、配置chromedriver" class="headerlink" title="3、配置chromedriver"></a>3、配置chromedriver</h2><p>下载好之后，还需要配置一下。</p>
-<p>1、把下载的文件解压到谷歌浏览器安装目录的根目录</p>
-<p>如果装在C盘的一般是：</p>
-<p>C:\Users\mi\AppData\Local\Google\Chrome\Application</p>
-<p>直接在桌面右键谷歌浏览器图标就可以进入。不过我改到D盘了。</p>
-<p>2、然后把这个路径添加到环境变量。</p>
-<p><img src="https://i.loli.net/2020/11/27/xhOclNfvP5dwtzR.png" srcset="/img/loading.gif" alt="image-20201127100555202"></p>
-<p>3、把解压出来的chromedriver复制一份到Anaconda3根目录就可以了，接着在代码中导入selenium然后就可以直接使用:</p>
-<div class="hljs"><pre><code class="hljs python">browser = webdriver.Chrome(options=chrome_options)</code></pre></div>
-
-<p>获取到chromdriver</p>
+              <h1 id="IDEA快捷键-Windows"><a href="#IDEA快捷键-Windows" class="headerlink" title="IDEA快捷键-Windows"></a>IDEA快捷键-Windows</h1><h2 id="Ctrl"><a href="#Ctrl" class="headerlink" title="Ctrl"></a>Ctrl</h2><table>
+<thead>
+<tr>
+<th><strong>快捷键</strong></th>
+<th><strong>介绍</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl + F</td>
+<td>在当前文件进行文本查找 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>在当前文件进行文本替换 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + Z</td>
+<td>撤销 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + Y</td>
+<td>删除光标所在行 或 删除选中的行 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + X</td>
+<td>剪切光标所在行 或 剪切选择内容</td>
+</tr>
+<tr>
+<td>Ctrl + C</td>
+<td>复制光标所在行 或 复制选择内容</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + W</td>
+<td>递进式选择代码块。选中光标所在的单词或段落，连续按可在选中基础上扩展选中范围 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + E</td>
+<td>显示最近打开的文件记录列表</td>
+</tr>
+<tr>
+<td>Ctrl + N</td>
+<td>根据输入的 <strong>类名</strong> 查找类文件</td>
+</tr>
+<tr>
+<td>Ctrl + G</td>
+<td>在当前文件跳转到指定行处</td>
+</tr>
+<tr>
+<td>Ctrl + J</td>
+<td>插入自定义动态代码模板</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td>方法参数提示显示</td>
+</tr>
+<tr>
+<td>Ctrl + Q</td>
+<td>光标所在的变量 / 类名 / 方法名等上面（也可以在提示补充的时候按），显示文档内容</td>
+</tr>
+<tr>
+<td>Ctrl + U</td>
+<td>前往当前光标所在的方法的父类的方法 / 接口定义</td>
+</tr>
+<tr>
+<td>Ctrl + B</td>
+<td>进入光标所在的方法/变量的接口或是定义出，等效于 <code>Ctrl + 左键单击</code></td>
+</tr>
+<tr>
+<td>Ctrl + K</td>
+<td>版本控制提交项目，需要此项目有加入到版本控制才可用</td>
+</tr>
+<tr>
+<td>Ctrl + T</td>
+<td>版本控制更新项目，需要此项目有加入到版本控制才可用</td>
+</tr>
+<tr>
+<td>Ctrl + H</td>
+<td>显示当前类的层次结构</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>选择可重写的方法</td>
+</tr>
+<tr>
+<td>Ctrl + I</td>
+<td>选择可继承的方法</td>
+</tr>
+<tr>
+<td>Ctrl + +</td>
+<td>展开代码</td>
+</tr>
+<tr>
+<td>Ctrl + -</td>
+<td>折叠代码</td>
+</tr>
+<tr>
+<td>Ctrl + /</td>
+<td>注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号 <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + [</td>
+<td>移动光标到当前所在代码的花括号开始位置</td>
+</tr>
+<tr>
+<td>Ctrl + ]</td>
+<td>移动光标到当前所在代码的花括号结束位置</td>
+</tr>
+<tr>
+<td>Ctrl + F1</td>
+<td>在光标所在的错误代码出显示错误信息</td>
+</tr>
+<tr>
+<td>Ctrl + F3</td>
+<td>调转到所选中的词的下一个引用位置</td>
+</tr>
+<tr>
+<td>Ctrl + F4</td>
+<td>关闭当前编辑文件</td>
+</tr>
+<tr>
+<td>Ctrl + F8</td>
+<td>在 Debug 模式下，设置光标当前行为断点，如果当前已经是断点则去掉断点</td>
+</tr>
+<tr>
+<td>Ctrl + F9</td>
+<td>执行 Make Project 操作</td>
+</tr>
+<tr>
+<td>Ctrl + F11</td>
+<td>选中文件 / 文件夹，使用助记符设定 / 取消书签</td>
+</tr>
+<tr>
+<td>Ctrl + F12</td>
+<td>弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</td>
+</tr>
+<tr>
+<td>Ctrl + Tab</td>
+<td>编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口</td>
+</tr>
+<tr>
+<td>Ctrl + Enter</td>
+<td>智能分隔行</td>
+</tr>
+<tr>
+<td>Ctrl + End</td>
+<td>跳到文件尾</td>
+</tr>
+<tr>
+<td>Ctrl + Home</td>
+<td>跳到文件头</td>
+</tr>
+<tr>
+<td>Ctrl + Space</td>
+<td>基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 <code>Ctrl + 逗号</code> <code>（必备）</code></td>
+</tr>
+<tr>
+<td>Ctrl + Delete</td>
+<td>删除光标后面的单词或是中文句</td>
+</tr>
+<tr>
+<td>Ctrl + BackSpace</td>
+<td>删除光标前面的单词或是中文句</td>
+</tr>
+<tr>
+<td>Ctrl + 1,2,3…9</td>
+<td>定位到对应数值的书签位置</td>
+</tr>
+<tr>
+<td>Ctrl + 左键单击</td>
+<td>在打开的文件标题上，弹出该文件路径</td>
+</tr>
+<tr>
+<td>Ctrl + 光标定位</td>
+<td>按 Ctrl 不要松开，会显示光标所在的类信息摘要</td>
+</tr>
+<tr>
+<td>Ctrl + 左方向键</td>
+<td>光标跳转到当前单词 / 中文句的左侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + 右方向键</td>
+<td>光标跳转到当前单词 / 中文句的右侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + 前方向键</td>
+<td>等效于鼠标滚轮向前效果</td>
+</tr>
+<tr>
+<td>Ctrl + 后方向键</td>
+<td>等效于鼠标滚轮向后效果</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
@@ -262,7 +432,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/python/">python</a>
+                      <a class="hover-with-bg" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a>
                     
                   </div>
                 
@@ -270,9 +440,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%87%87%E5%9D%91%E6%97%A5%E8%AE%B0/">采坑日记</a>
-                    
-                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                      <a class="hover-with-bg" href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a>
                     
                   </div>
                 
@@ -285,18 +453,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/02/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE-Windows/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">IDEA快捷键-Windows</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/24/Linux%E5%91%BD%E4%BB%A4/">
-                        <span class="hidden-mobile">Linux命令</span>
+                      <a href="/2020/11/27/win10%20Anaconda%E7%8E%AF%E5%A2%83pythona%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEchromedriver/">
+                        <span class="hidden-mobile">win10 Anaconda环境pythona安装配置chromedriver</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

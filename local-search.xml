@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>IDEA快捷键-Windows</title>
+    <link href="/2020/12/02/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE-Windows/"/>
+    <url>/2020/12/02/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE-Windows/</url>
+    
+    <content type="html"><![CDATA[<h1 id="IDEA快捷键-Windows"><a href="#IDEA快捷键-Windows" class="headerlink" title="IDEA快捷键-Windows"></a>IDEA快捷键-Windows</h1><h2 id="Ctrl"><a href="#Ctrl" class="headerlink" title="Ctrl"></a>Ctrl</h2><table><thead><tr><th><strong>快捷键</strong></th><th><strong>介绍</strong></th></tr></thead><tbody><tr><td>Ctrl + F</td><td>在当前文件进行文本查找 <code>（必备）</code></td></tr><tr><td>Ctrl + R</td><td>在当前文件进行文本替换 <code>（必备）</code></td></tr><tr><td>Ctrl + Z</td><td>撤销 <code>（必备）</code></td></tr><tr><td>Ctrl + Y</td><td>删除光标所在行 或 删除选中的行 <code>（必备）</code></td></tr><tr><td>Ctrl + X</td><td>剪切光标所在行 或 剪切选择内容</td></tr><tr><td>Ctrl + C</td><td>复制光标所在行 或 复制选择内容</td></tr><tr><td>Ctrl + D</td><td>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 <code>（必备）</code></td></tr><tr><td>Ctrl + W</td><td>递进式选择代码块。选中光标所在的单词或段落，连续按可在选中基础上扩展选中范围 <code>（必备）</code></td></tr><tr><td>Ctrl + E</td><td>显示最近打开的文件记录列表</td></tr><tr><td>Ctrl + N</td><td>根据输入的 <strong>类名</strong> 查找类文件</td></tr><tr><td>Ctrl + G</td><td>在当前文件跳转到指定行处</td></tr><tr><td>Ctrl + J</td><td>插入自定义动态代码模板</td></tr><tr><td>Ctrl + P</td><td>方法参数提示显示</td></tr><tr><td>Ctrl + Q</td><td>光标所在的变量 / 类名 / 方法名等上面（也可以在提示补充的时候按），显示文档内容</td></tr><tr><td>Ctrl + U</td><td>前往当前光标所在的方法的父类的方法 / 接口定义</td></tr><tr><td>Ctrl + B</td><td>进入光标所在的方法/变量的接口或是定义出，等效于 <code>Ctrl + 左键单击</code></td></tr><tr><td>Ctrl + K</td><td>版本控制提交项目，需要此项目有加入到版本控制才可用</td></tr><tr><td>Ctrl + T</td><td>版本控制更新项目，需要此项目有加入到版本控制才可用</td></tr><tr><td>Ctrl + H</td><td>显示当前类的层次结构</td></tr><tr><td>Ctrl + O</td><td>选择可重写的方法</td></tr><tr><td>Ctrl + I</td><td>选择可继承的方法</td></tr><tr><td>Ctrl + +</td><td>展开代码</td></tr><tr><td>Ctrl + -</td><td>折叠代码</td></tr><tr><td>Ctrl + /</td><td>注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号 <code>（必备）</code></td></tr><tr><td>Ctrl + [</td><td>移动光标到当前所在代码的花括号开始位置</td></tr><tr><td>Ctrl + ]</td><td>移动光标到当前所在代码的花括号结束位置</td></tr><tr><td>Ctrl + F1</td><td>在光标所在的错误代码出显示错误信息</td></tr><tr><td>Ctrl + F3</td><td>调转到所选中的词的下一个引用位置</td></tr><tr><td>Ctrl + F4</td><td>关闭当前编辑文件</td></tr><tr><td>Ctrl + F8</td><td>在 Debug 模式下，设置光标当前行为断点，如果当前已经是断点则去掉断点</td></tr><tr><td>Ctrl + F9</td><td>执行 Make Project 操作</td></tr><tr><td>Ctrl + F11</td><td>选中文件 / 文件夹，使用助记符设定 / 取消书签</td></tr><tr><td>Ctrl + F12</td><td>弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</td></tr><tr><td>Ctrl + Tab</td><td>编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口</td></tr><tr><td>Ctrl + Enter</td><td>智能分隔行</td></tr><tr><td>Ctrl + End</td><td>跳到文件尾</td></tr><tr><td>Ctrl + Home</td><td>跳到文件头</td></tr><tr><td>Ctrl + Space</td><td>基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 <code>Ctrl + 逗号</code> <code>（必备）</code></td></tr><tr><td>Ctrl + Delete</td><td>删除光标后面的单词或是中文句</td></tr><tr><td>Ctrl + BackSpace</td><td>删除光标前面的单词或是中文句</td></tr><tr><td>Ctrl + 1,2,3…9</td><td>定位到对应数值的书签位置</td></tr><tr><td>Ctrl + 左键单击</td><td>在打开的文件标题上，弹出该文件路径</td></tr><tr><td>Ctrl + 光标定位</td><td>按 Ctrl 不要松开，会显示光标所在的类信息摘要</td></tr><tr><td>Ctrl + 左方向键</td><td>光标跳转到当前单词 / 中文句的左侧开头位置</td></tr><tr><td>Ctrl + 右方向键</td><td>光标跳转到当前单词 / 中文句的右侧开头位置</td></tr><tr><td>Ctrl + 前方向键</td><td>等效于鼠标滚轮向前效果</td></tr><tr><td>Ctrl + 后方向键</td><td>等效于鼠标滚轮向后效果</td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>小技巧</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小技巧</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>win10 Anaconda环境pythona安装配置chromedriver</title>
     <link href="/2020/11/27/win10%20Anaconda%E7%8E%AF%E5%A2%83pythona%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEchromedriver/"/>
     <url>/2020/11/27/win10%20Anaconda%E7%8E%AF%E5%A2%83pythona%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEchromedriver/</url>
