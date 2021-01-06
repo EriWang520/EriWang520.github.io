@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>红黑树小结</title>
+    <link href="/2021/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%B0%8F%E7%BB%93/"/>
+    <url>/2021/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%B0%8F%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="红黑树小结"><a href="#红黑树小结" class="headerlink" title="红黑树小结"></a>红黑树小结</h1><p>红黑树具有平衡二叉树的特性，所以在插入或删除节点时也需要根据情况进行<strong>左旋</strong>或者<strong>右旋</strong>。</p><p>除了平衡二叉树的特性外，为了满足下面红黑树的特性，对红黑树的操作，还有<strong>变色</strong>，在不满足红黑树的特性时，对节点进行调整（<strong>旋转</strong>、<strong>变色</strong>），使之满足红黑树的特性。</p><h3 id="红黑树的特性"><a href="#红黑树的特性" class="headerlink" title="红黑树的特性"></a>红黑树的特性</h3><p>1、每个节点，要么是黑色，要么是红色</p><p>2、根节点是黑色</p><p>3、每个叶子结点都是黑色的空结点 （NIL节点）</p><p>4、每个红色结点的两个子结点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色结点)</p><p>5、从任一结点到其每个叶子的所有路径都包含相同数目的黑色结点。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据结构和算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据结构和算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>PicGo + 码云Gitee搭建图床</title>
     <link href="/2021/01/05/PicGo%20+%20%E7%A0%81%E4%BA%91Gitee%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
     <url>/2021/01/05/PicGo%20+%20%E7%A0%81%E4%BA%91Gitee%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
