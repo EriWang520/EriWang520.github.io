@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2021/01/07/Ubuntu18.04%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MySql/"/>
+    <url>/2021/01/07/Ubuntu18.04%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MySql/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Ubuntu18-04服务器安装MySql"><a href="#Ubuntu18-04服务器安装MySql" class="headerlink" title="Ubuntu18.04服务器安装MySql"></a>Ubuntu18.04服务器安装MySql</h1><p>这里用的是阿里云的ECS</p><h3 id="1、安装mysql"><a href="#1、安装mysql" class="headerlink" title="1、安装mysql"></a>1、安装mysql</h3><pre><code class="hljs powershell">sudo apt<span class="hljs-literal">-get</span> install mysql<span class="hljs-literal">-server</span></code></pre><p>如果需要客户端继续装mysql-client</p><p>检查mysql状态：</p><pre><code class="hljs shell">service mysql status</code></pre><p><img src="https://gitee.com/ericw5200/image/raw/master/img/image-20210107145719759.png" alt="image-20210107145719759"></p><p>看到前面的小绿点说明正常运行</p><p>如果没有运行，可执行以下命令启动：</p><pre><code class="hljs she">sudo service mysql start</code></pre><p>相应的，停止则执行：</p><pre><code class="hljs she">sudo service mysql stop</code></pre><p>重启服务：</p><pre><code class="hljs shel">sudo service mysql restart</code></pre><h3 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h3><h5 id="1、修改密码"><a href="#1、修改密码" class="headerlink" title="1、修改密码"></a>1、修改密码</h5><p>在安装过程中我们并没有遇到设置密码的请求，可以查看mysql的初始密码，用来登陆mysql：</p><pre><code class="hljs shel">sudo cat &#x2F;etc&#x2F;mysql&#x2F;debian.cnf</code></pre><p><img src="https://gitee.com/ericw5200/image/raw/master/img/image-20210107150340850.png" alt="image-20210107150340850"></p><p>然后登陆mysql：</p><pre><code class="hljs shel">sudo mysql -u root -p</code></pre><p>可能会要求先输入 root 用户密码，再输入刚才的mysql默认密码进行登陆。</p><p>然后在MySQL中修改密码，执行：</p><pre><code class="hljs shel">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;</code></pre><p>后面一个 root 就是新密码。</p><p>PS：没有找到初始密码直接执行命令：sudo mysql你会发现直接进入MySQL了，当然该命令只有第一次有效，改了密码之后就没用了。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>红黑树小结</title>
     <link href="/2021/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%B0%8F%E7%BB%93/"/>
     <url>/2021/01/06/%E7%BA%A2%E9%BB%91%E6%A0%91%E5%B0%8F%E7%BB%93/</url>
@@ -384,7 +397,7 @@
     <link href="/2020/06/25/%E6%A0%91%E8%8E%93%E6%B4%BE4b-USB%E5%90%AF%E5%8A%A8/"/>
     <url>/2020/06/25/%E6%A0%91%E8%8E%93%E6%B4%BE4b-USB%E5%90%AF%E5%8A%A8/</url>
     
-    <content type="html"><![CDATA[<p>新买了树莓派4b,看网上说可以用USB启动，就试了一下，还可以。</p><hr><p>这里是正文</p>]]></content>
+    <content type="html"><![CDATA[<p>新买了树莓派4b,看网上说可以用USB启动，就试了一下，还可以。</p><hr>]]></content>
     
     
     <categories>
