@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>树莓派4B ubuntu18.04 安装Docker</title>
+    <link href="/2021/01/10/%E6%A0%91%E8%8E%93%E6%B4%BE4B%20ubuntu18.04%20%E5%AE%89%E8%A3%85Docker/"/>
+    <url>/2021/01/10/%E6%A0%91%E8%8E%93%E6%B4%BE4B%20ubuntu18.04%20%E5%AE%89%E8%A3%85Docker/</url>
+    
+    <content type="html"><![CDATA[<h1 id="树莓派4B-ubuntu18-04-安装Docker"><a href="#树莓派4B-ubuntu18-04-安装Docker" class="headerlink" title="树莓派4B ubuntu18.04 安装Docker"></a>树莓派4B ubuntu18.04 安装Docker</h1><h3 id="1、更换软件源"><a href="#1、更换软件源" class="headerlink" title="1、更换软件源"></a>1、更换软件源</h3><p>如果已经更换过可以跳过，没有更换的话下载很慢，最好换成国内源</p><h3 id="2、安装需要的包"><a href="#2、安装需要的包" class="headerlink" title="2、安装需要的包"></a>2、安装需要的包</h3><pre><code class="hljs shell">sudo apt install apt-transport-https ca-certificates software-properties-common curl</code></pre><h3 id="3、添加-GPG-密钥，并添加-Docker-ce-软件源"><a href="#3、添加-GPG-密钥，并添加-Docker-ce-软件源" class="headerlink" title="3、添加 GPG 密钥，并添加 Docker-ce 软件源"></a>3、添加 GPG 密钥，并添加 Docker-ce 软件源</h3><p>这里添加中科大的 Docker-ce 源，添加 GPG 密钥：</p><pre><code class="hljs shell">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</code></pre><p>安装上即可，一般不需要验证</p><p>添加 Docker-ce 源：</p><pre><code class="hljs shell">sudo add-apt-repository &quot;deb [arch=arm64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</code></pre><p>树莓派是ARM架构的，所以在添加源时应当指定参数：arch=arm64</p><h3 id="4、然后更新软件包"><a href="#4、然后更新软件包" class="headerlink" title="4、然后更新软件包"></a>4、然后更新软件包</h3><pre><code class="hljs shel">sudo apt update</code></pre><h3 id="5、安装-Docker"><a href="#5、安装-Docker" class="headerlink" title="5、安装 Docker"></a>5、安装 Docker</h3><pre><code class="hljs shell">sudo apt-get install docker-ce docker-ce-cli containerd.io</code></pre><h3 id="6、验证"><a href="#6、验证" class="headerlink" title="6、验证"></a>6、验证</h3><pre><code class="hljs shell">docker info</code></pre><h3 id="7、设置开机自启动并启动-Docker-ce（安装成功后默认已设置并启动，可忽略）"><a href="#7、设置开机自启动并启动-Docker-ce（安装成功后默认已设置并启动，可忽略）" class="headerlink" title="7、设置开机自启动并启动 Docker-ce（安装成功后默认已设置并启动，可忽略）"></a>7、设置开机自启动并启动 Docker-ce（安装成功后默认已设置并启动，可忽略）</h3><pre><code class="hljs shell">sudo systemctl enable dockersudo systemctl start docker</code></pre><h3 id="8、测试运行"><a href="#8、测试运行" class="headerlink" title="8、测试运行"></a>8、测试运行</h3><pre><code class="hljs shell">sudo docker run hello-world</code></pre><h3 id="9、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）"><a href="#9、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）" class="headerlink" title="9、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）"></a>9、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）</h3><pre><code class="hljs shell">sudo groupadd dockersudo usermod -aG docker $USER</code></pre><h3 id="10、测试添加用户组（可选）"><a href="#10、测试添加用户组（可选）" class="headerlink" title="10、测试添加用户组（可选）"></a>10、测试添加用户组（可选）</h3><pre><code class="hljs shell">docker run hello-world</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>技术干货</tag>
+      
+      <tag>树莓派</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>WSL2 Ubuntu18.04 DNS 问题（apt-get update失败）</title>
+    <link href="/2021/01/10/WSL2%20Ubuntu18.04%20DNS%20%E9%97%AE%E9%A2%98/"/>
+    <url>/2021/01/10/WSL2%20Ubuntu18.04%20DNS%20%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="WSL2-Ubuntu18-04-DNS-问题（apt-get-update失败）"><a href="#WSL2-Ubuntu18-04-DNS-问题（apt-get-update失败）" class="headerlink" title="WSL2 Ubuntu18.04 DNS 问题（apt-get update失败）"></a>WSL2 Ubuntu18.04 DNS 问题（apt-get update失败）</h1><p>安装WSL2 ubuntu之后老是遇到 update 时连接不到服务器，而且又是 ssh 连接一些服务器也连不上，后来查了下是 DNS 问题。网上也有一些教程，但是还是遇到了一些新的坑。</p><p>一般临时解决方案：</p><p>更改 namesever </p><pre><code class="hljs shell">sudo vim /etc/resolv.conf</code></pre><p>然后把 nameserver 改成 8.8.8.8 或者其他可用的也行</p><pre><code class="hljs shell">:wq</code></pre><p>保存。</p><p>这下去更新应该就可以了。</p><p>但是，重新打开一个窗口或者重启之后就又失效了，原因是 windows 每次会自动更改 namesever </p><p>要长期有效，需要新建一个 wsl.conf 文件</p><pre><code class="hljs shell">sudo vim /etc/wsl.conf</code></pre><p>然后添加内容：</p><pre><code class="hljs shell">[network]generateResolvConf = false</code></pre><p>再保存，就可以了。</p><p>一般就没问题了，但是我后面还遇到了一点问题，我是先改了wsl.conf文件，但是更改resolv.conf文件的时候老是提示</p><pre><code class="hljs shell">E166:Can&#x27;t open linked file for writing</code></pre><p>就一直保存不了，然后查了下，说这是个符号链接，但是也没有给出解决方案。</p><p>我想到之前符号链接文件是可以直接删除的，而且这个文件里没有其他内容，于是我就直接把这个文件删除了，又重新用 vim 新建了一个文件，再把 nameserver 改了就好了。我怀疑有可能是之前新建文件的时候命令打错了，新建成了链接文件。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>技术干货</tag>
+      
+      <tag>坑</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Ubuntu18.04服务器安装MySql</title>
     <link href="/2021/01/07/Ubuntu18.04%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MySql/"/>
     <url>/2021/01/07/Ubuntu18.04%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MySql/</url>
