@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      340 字
+      580 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      8
        分钟
     </span>
   
@@ -235,7 +235,7 @@
             <h1 style="display: none">树莓派4B ubuntu18.04 安装Docker</h1>
             
             <div class="markdown-body">
-              <h1 id="树莓派4B-ubuntu18-04-安装Docker"><a href="#树莓派4B-ubuntu18-04-安装Docker" class="headerlink" title="树莓派4B ubuntu18.04 安装Docker"></a>树莓派4B ubuntu18.04 安装Docker</h1><h3 id="1、更换软件源"><a href="#1、更换软件源" class="headerlink" title="1、更换软件源"></a>1、更换软件源</h3><p>如果已经更换过可以跳过，没有更换的话下载很慢，最好换成国内源</p>
+              <h1 id="树莓派4B-ubuntu18-04-安装Docker与卸载"><a href="#树莓派4B-ubuntu18-04-安装Docker与卸载" class="headerlink" title="树莓派4B ubuntu18.04 安装Docker与卸载"></a>树莓派4B ubuntu18.04 安装Docker与卸载</h1><h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><h3 id="1、更换软件源"><a href="#1、更换软件源" class="headerlink" title="1、更换软件源"></a>1、更换软件源</h3><p>如果已经更换过可以跳过，没有更换的话下载很慢，最好换成国内源</p>
 <h3 id="2、安装需要的包"><a href="#2、安装需要的包" class="headerlink" title="2、安装需要的包"></a>2、安装需要的包</h3><div class="hljs"><pre><code class="hljs shell">sudo apt install apt-transport-https ca-certificates software-properties-common curl</code></pre></div>
 
 
@@ -269,18 +269,74 @@ sudo systemctl start docker</code></pre></div>
 
 
 
-<h3 id="9、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）"><a href="#9、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）" class="headerlink" title="9、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）"></a>9、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）</h3><div class="hljs"><pre><code class="hljs shell">sudo groupadd docker
+<h3 id="9、运行命令"><a href="#9、运行命令" class="headerlink" title="9、运行命令"></a>9、运行命令</h3><div class="hljs"><pre><code class="hljs shell">docker run --name nextcloud   -p 81:80   -v /usbu/program/docker/volumes:/var/lib/docker/volumes  -d nextcloud</code></pre></div>
+
+<p>:前是宿主机文件夹，后面是容器共享文件夹</p>
+<h3 id="10、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）"><a href="#10、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）" class="headerlink" title="10、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）"></a>10、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）</h3><div class="hljs"><pre><code class="hljs shell">sudo groupadd docker
 sudo usermod -aG docker $USER</code></pre></div>
 
 
 
-<h3 id="10、测试添加用户组（可选）"><a href="#10、测试添加用户组（可选）" class="headerlink" title="10、测试添加用户组（可选）"></a>10、测试添加用户组（可选）</h3><div class="hljs"><pre><code class="hljs shell">docker run hello-world</code></pre></div>
+<h3 id="11、测试添加用户组（可选）"><a href="#11、测试添加用户组（可选）" class="headerlink" title="11、测试添加用户组（可选）"></a>11、测试添加用户组（可选）</h3><div class="hljs"><pre><code class="hljs shell">docker run hello-world</code></pre></div>
 
 
 
 
 
-<h3 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h3><p>另外，就这样拉取镜像的时候可能还是会慢，所以可以添加阿里云的容器镜像加速，免费的，这样在 pull 镜像的时候就不卡了。</p>
+<h2 id="二、卸载"><a href="#二、卸载" class="headerlink" title="二、卸载"></a>二、卸载</h2><h3 id="1、运行以下命令以停止所有正在运行的容器并删除所有docker对象："><a href="#1、运行以下命令以停止所有正在运行的容器并删除所有docker对象：" class="headerlink" title="1、运行以下命令以停止所有正在运行的容器并删除所有docker对象："></a>1、运行以下命令以停止所有正在运行的容器并删除所有docker对象：</h3><div class="hljs"><pre><code class="hljs shel">docker container stop $(docker container ls -aq)
+docker system prune -a --volumes</code></pre></div>
+
+
+
+
+
+<h4 id="2、删除某软件-及其安装时自动安装的所有包"><a href="#2、删除某软件-及其安装时自动安装的所有包" class="headerlink" title="2、删除某软件,及其安装时自动安装的所有包"></a>2、删除某软件,及其安装时自动安装的所有包</h4><div class="hljs"><pre><code class="hljs shell">sudo apt-get autoremove docker docker-ce docker-engine  docker.io  containerd runc</code></pre></div>
+
+
+
+<h4 id="3、删除docker其他没有没有卸载"><a href="#3、删除docker其他没有没有卸载" class="headerlink" title="3、删除docker其他没有没有卸载"></a>3、删除docker其他没有没有卸载</h4><div class="hljs"><pre><code class="hljs shel">dpkg -l | grep docker</code></pre></div>
+
+
+
+<h4 id="4、卸载没有删除的docker相关插件-结合自己电脑的实际情况"><a href="#4、卸载没有删除的docker相关插件-结合自己电脑的实际情况" class="headerlink" title="4、卸载没有删除的docker相关插件(结合自己电脑的实际情况)"></a>4、卸载没有删除的docker相关插件(结合自己电脑的实际情况)</h4><div class="hljs"><pre><code class="hljs shell">sudo apt-get autoremove docker-ce-*</code></pre></div>
+
+
+
+
+
+<h4 id="5、删除docker的相关配置-amp-目录"><a href="#5、删除docker的相关配置-amp-目录" class="headerlink" title="5、删除docker的相关配置&amp;目录"></a>5、删除docker的相关配置&amp;目录</h4><div class="hljs"><pre><code class="hljs shell">sudo rm -rf /etc/systemd/system/docker.service.d
+sudo rm -rf /var/lib/docker</code></pre></div>
+
+
+
+<h4 id="6、确定docker卸载完毕"><a href="#6、确定docker卸载完毕" class="headerlink" title="6、确定docker卸载完毕"></a>6、确定docker卸载完毕</h4><div class="hljs"><pre><code class="hljs shell">docker --version</code></pre></div>
+
+
+
+<h2 id="三、更改docker存储目录"><a href="#三、更改docker存储目录" class="headerlink" title="三、更改docker存储目录"></a>三、更改docker存储目录</h2><h4 id="1、先停止docker-服务"><a href="#1、先停止docker-服务" class="headerlink" title="1、先停止docker 服务"></a>1、先停止docker 服务</h4><div class="hljs"><pre><code class="hljs shell">systemctl stop docker</code></pre></div>
+
+
+
+<h4 id="2、修改配置文件"><a href="#2、修改配置文件" class="headerlink" title="2、修改配置文件"></a>2、修改配置文件</h4><div class="hljs"><pre><code class="hljs shell">vim /usr/lib/systemd/system/docker.service
+
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --graph /mnt/sde/docker</code></pre></div>
+
+<p>在最后加上：</p>
+<div class="hljs"><pre><code class="hljs shell">--graph /mnt/sde/docker</code></pre></div>
+
+<p>/mnt/sde/docker 就是新目录</p>
+<h4 id="3、重新载入配置"><a href="#3、重新载入配置" class="headerlink" title="3、重新载入配置"></a>3、重新载入配置</h4><div class="hljs"><pre><code class="hljs shell">systemctl daemon-reload</code></pre></div>
+
+
+
+<h4 id="4、重启服务"><a href="#4、重启服务" class="headerlink" title="4、重启服务"></a>4、重启服务</h4><div class="hljs"><pre><code class="hljs shell">systemctl start docker</code></pre></div>
+
+
+
+<h4 id="5、验证配置"><a href="#5、验证配置" class="headerlink" title="5、验证配置"></a>5、验证配置</h4><div class="hljs"><pre><code class="hljs shell">docker info</code></pre></div>
+
+
+
 
             </div>
             <hr>
