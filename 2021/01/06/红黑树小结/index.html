@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      516 字
+      455 字
     </span>
   
 
@@ -235,9 +235,8 @@
             <h1 style="display: none">红黑树小结</h1>
             
             <div class="markdown-body">
-              <h1 id="红黑树小结"><a href="#红黑树小结" class="headerlink" title="红黑树小结"></a>红黑树小结</h1><p>[部分摘抄自敖丙的文章<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/312327402]">https://www.zhihu.com/question/312327402]</a></p>
-<p>红黑树具有平衡二叉树的特性，所以在插入或删除节点时也需要根据情况进行<strong>左旋</strong>或者<strong>右旋</strong>。</p>
-<p>除了平衡二叉树的特性外，为了满足下面红黑树的特性，对红黑树的操作，还有<strong>变色</strong>，在不满足红黑树的特性时，对节点进行调整（<strong>旋转</strong>、<strong>变色</strong>），使之满足红黑树的特性。</p>
+              <h1 id="红黑树小结"><a href="#红黑树小结" class="headerlink" title="红黑树小结"></a>红黑树小结</h1><p>[部分摘抄自敖丙的文章<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/312327402">https://www.zhihu.com/question/312327402</a> ]另一篇 ：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/95892351">https://zhuanlan.zhihu.com/p/95892351</a> 两篇都有遗漏的地方，结合起来差不多。</p>
+<p>红黑树和2-3-4 树是一个套路，可以互相转化。</p>
 <h4 id="2-3-4树"><a href="#2-3-4树" class="headerlink" title="2-3-4树"></a>2-3-4树</h4><p>2-3-4树是<strong>阶数</strong>为4的B树，B树，全名BalanceTree，平衡树。这种结构主要用来做查找。关于2-3-4树插入和删除另外专门写一篇总结下，对 2-3 树来说，大体就是2节点插入会优先变3节点，3节点会临时变 4 节点，然后4节点变成一个父节点带两个子节点。</p>
 <p><img src="https://gitee.com/ericw5200/image/raw/master/img/image-20210113110205366.png" srcset="/img/loading.gif" alt="image-20210113110205366"></p>
 <h4 id="2-3-4树到红黑树的转化"><a href="#2-3-4树到红黑树的转化" class="headerlink" title="2-3-4树到红黑树的转化"></a>2-3-4树到红黑树的转化</h4><p>总的来说，红黑树是对概念模型2-3-4树的一种实现，由于直接进行不同节点间的转化会造成较大的开销，所以选择以二叉树为基础，在二叉树的属性中加入一个<strong>颜色属性</strong>来表示2-3-4树中不同的节点。</p>
