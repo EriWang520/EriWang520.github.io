@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>树莓派4B ubuntu18.04 安装Docker - MingBlog</title>
+  <title>HashMap和HashTable - MingBlog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="树莓派4B ubuntu18.04 安装Docker">
+            <span class="h2" id="subtitle" title="HashMap和HashTable">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-10 00:00" pubdate>
-        2021年1月10日 凌晨
+      <time datetime="2021-03-01 00:00" pubdate>
+        2021年3月1日 凌晨
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      580 字
+      1.2k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      16
        分钟
     </span>
   
@@ -232,111 +232,86 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">树莓派4B ubuntu18.04 安装Docker</h1>
+            <h1 style="display: none">HashMap和HashTable</h1>
             
             <div class="markdown-body">
-              <h1 id="树莓派4B-ubuntu18-04-安装Docker与卸载"><a href="#树莓派4B-ubuntu18-04-安装Docker与卸载" class="headerlink" title="树莓派4B ubuntu18.04 安装Docker与卸载"></a>树莓派4B ubuntu18.04 安装Docker与卸载</h1><h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><h3 id="1、更换软件源"><a href="#1、更换软件源" class="headerlink" title="1、更换软件源"></a>1、更换软件源</h3><p>如果已经更换过可以跳过，没有更换的话下载很慢，最好换成国内源</p>
-<h3 id="2、安装需要的包"><a href="#2、安装需要的包" class="headerlink" title="2、安装需要的包"></a>2、安装需要的包</h3><div class="hljs"><pre><code class="hljs shell">sudo apt install apt-transport-https ca-certificates software-properties-common curl</code></pre></div>
-
-
-
-<h3 id="3、添加-GPG-密钥，并添加-Docker-ce-软件源"><a href="#3、添加-GPG-密钥，并添加-Docker-ce-软件源" class="headerlink" title="3、添加 GPG 密钥，并添加 Docker-ce 软件源"></a>3、添加 GPG 密钥，并添加 Docker-ce 软件源</h3><p>这里添加中科大的 Docker-ce 源，添加 GPG 密钥：</p>
-<div class="hljs"><pre><code class="hljs shell">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</code></pre></div>
-
-<p>安装上即可，一般不需要验证</p>
-<p>添加 Docker-ce 源：</p>
-<div class="hljs"><pre><code class="hljs shell">sudo add-apt-repository &quot;deb [arch=arm64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</code></pre></div>
-
-<p>树莓派是ARM架构的，所以在添加源时应当指定参数：arch=arm64</p>
-<h3 id="4、然后更新软件包"><a href="#4、然后更新软件包" class="headerlink" title="4、然后更新软件包"></a>4、然后更新软件包</h3><div class="hljs"><pre><code class="hljs shel">sudo apt update</code></pre></div>
-
-
-
-<h3 id="5、安装-Docker"><a href="#5、安装-Docker" class="headerlink" title="5、安装 Docker"></a>5、安装 Docker</h3><div class="hljs"><pre><code class="hljs shell">sudo apt-get install docker-ce docker-ce-cli containerd.io</code></pre></div>
-
-
-
-<h3 id="6、验证"><a href="#6、验证" class="headerlink" title="6、验证"></a>6、验证</h3><div class="hljs"><pre><code class="hljs shell">docker info</code></pre></div>
-
-
-
-<h3 id="7、设置开机自启动并启动-Docker-ce（安装成功后默认已设置并启动，可忽略）"><a href="#7、设置开机自启动并启动-Docker-ce（安装成功后默认已设置并启动，可忽略）" class="headerlink" title="7、设置开机自启动并启动 Docker-ce（安装成功后默认已设置并启动，可忽略）"></a>7、设置开机自启动并启动 Docker-ce（安装成功后默认已设置并启动，可忽略）</h3><div class="hljs"><pre><code class="hljs shell">sudo systemctl enable docker
-sudo systemctl start docker</code></pre></div>
-
-
-
-<h3 id="8、测试运行"><a href="#8、测试运行" class="headerlink" title="8、测试运行"></a>8、测试运行</h3><div class="hljs"><pre><code class="hljs shell">sudo docker run hello-world</code></pre></div>
-
-
-
-<h3 id="9、运行命令"><a href="#9、运行命令" class="headerlink" title="9、运行命令"></a>9、运行命令</h3><div class="hljs"><pre><code class="hljs shell">docker run --name nextcloud   -p 81:80   -v /usbu/program/docker/volumes:/var/lib/docker/volumes  -d nextcloud</code></pre></div>
-
-<p>:前是宿主机文件夹，后面是容器共享文件夹</p>
-<h3 id="10、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）"><a href="#10、添加当前用户到-docker-用户组，可以不用-sudo-运行-docker（可选）" class="headerlink" title="10、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）"></a>10、添加当前用户到 docker 用户组，可以不用 sudo 运行 docker（可选）</h3><div class="hljs"><pre><code class="hljs shell">sudo groupadd docker
-sudo usermod -aG docker $USER</code></pre></div>
-
-
-
-<h3 id="11、测试添加用户组（可选）"><a href="#11、测试添加用户组（可选）" class="headerlink" title="11、测试添加用户组（可选）"></a>11、测试添加用户组（可选）</h3><div class="hljs"><pre><code class="hljs shell">docker run hello-world</code></pre></div>
-
-
-
-
-
-<h2 id="二、卸载"><a href="#二、卸载" class="headerlink" title="二、卸载"></a>二、卸载</h2><h3 id="1、运行以下命令以停止所有正在运行的容器并删除所有docker对象："><a href="#1、运行以下命令以停止所有正在运行的容器并删除所有docker对象：" class="headerlink" title="1、运行以下命令以停止所有正在运行的容器并删除所有docker对象："></a>1、运行以下命令以停止所有正在运行的容器并删除所有docker对象：</h3><div class="hljs"><pre><code class="hljs shel">docker container stop $(docker container ls -aq)
-docker system prune -a --volumes</code></pre></div>
-
-
-
-
-
-<h4 id="2、删除某软件-及其安装时自动安装的所有包"><a href="#2、删除某软件-及其安装时自动安装的所有包" class="headerlink" title="2、删除某软件,及其安装时自动安装的所有包"></a>2、删除某软件,及其安装时自动安装的所有包</h4><div class="hljs"><pre><code class="hljs shell">sudo apt-get autoremove docker docker-ce docker-engine  docker.io  containerd runc</code></pre></div>
-
-
-
-<h4 id="3、删除docker其他没有没有卸载"><a href="#3、删除docker其他没有没有卸载" class="headerlink" title="3、删除docker其他没有没有卸载"></a>3、删除docker其他没有没有卸载</h4><div class="hljs"><pre><code class="hljs shel">dpkg -l | grep docker</code></pre></div>
-
-
-
-<h4 id="4、卸载没有删除的docker相关插件-结合自己电脑的实际情况"><a href="#4、卸载没有删除的docker相关插件-结合自己电脑的实际情况" class="headerlink" title="4、卸载没有删除的docker相关插件(结合自己电脑的实际情况)"></a>4、卸载没有删除的docker相关插件(结合自己电脑的实际情况)</h4><div class="hljs"><pre><code class="hljs shell">sudo apt-get autoremove docker-ce-*</code></pre></div>
-
-
-
-
-
-<h4 id="5、删除docker的相关配置-amp-目录"><a href="#5、删除docker的相关配置-amp-目录" class="headerlink" title="5、删除docker的相关配置&amp;目录"></a>5、删除docker的相关配置&amp;目录</h4><div class="hljs"><pre><code class="hljs shell">sudo rm -rf /etc/systemd/system/docker.service.d
-sudo rm -rf /var/lib/docker</code></pre></div>
-
-
-
-<h4 id="6、确定docker卸载完毕"><a href="#6、确定docker卸载完毕" class="headerlink" title="6、确定docker卸载完毕"></a>6、确定docker卸载完毕</h4><div class="hljs"><pre><code class="hljs shell">docker --version</code></pre></div>
-
-
-
-<h2 id="三、更改docker存储目录"><a href="#三、更改docker存储目录" class="headerlink" title="三、更改docker存储目录"></a>三、更改docker存储目录</h2><h4 id="1、先停止docker-服务"><a href="#1、先停止docker-服务" class="headerlink" title="1、先停止docker 服务"></a>1、先停止docker 服务</h4><div class="hljs"><pre><code class="hljs shell">systemctl stop docker</code></pre></div>
-
-
-
-<h4 id="2、修改配置文件"><a href="#2、修改配置文件" class="headerlink" title="2、修改配置文件"></a>2、修改配置文件</h4><div class="hljs"><pre><code class="hljs shell">vim /usr/lib/systemd/system/docker.service
-
-ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --graph /mnt/sde/docker</code></pre></div>
-
-<p>在最后加上：</p>
-<div class="hljs"><pre><code class="hljs shell">--graph /mnt/sde/docker</code></pre></div>
-
-<p>/mnt/sde/docker 就是新目录</p>
-<h4 id="3、重新载入配置"><a href="#3、重新载入配置" class="headerlink" title="3、重新载入配置"></a>3、重新载入配置</h4><div class="hljs"><pre><code class="hljs shell">systemctl daemon-reload</code></pre></div>
-
-
-
-<h4 id="4、重启服务"><a href="#4、重启服务" class="headerlink" title="4、重启服务"></a>4、重启服务</h4><div class="hljs"><pre><code class="hljs shell">systemctl start docker</code></pre></div>
-
-
-
-<h4 id="5、验证配置"><a href="#5、验证配置" class="headerlink" title="5、验证配置"></a>5、验证配置</h4><div class="hljs"><pre><code class="hljs shell">docker info</code></pre></div>
-
-
-
+              <h1 id="HashMap和HashTable"><a href="#HashMap和HashTable" class="headerlink" title="HashMap和HashTable"></a>HashMap和HashTable</h1><p>这里总结下两者的区别。部分内容参考自：</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_suggestion&amp;type=content">https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_suggestion&amp;type=content</a></p>
+<p>1、HashMap 是线程不安全的，在多线程下容易产生死循环。但是在单线程下效率较高。Hashtable线程安全的，很多方法都有synchronized修饰，但同时因为加锁导致单线程环境下效率较低。</p>
+<p>2、HashMap允许有一个key为null，允许多个value为null；而Hashtable不允许key或者value为null。</p>
+<p>然后讲下源码实现上的一些区别吧。</p>
+<h4 id="1、构造函数的比较"><a href="#1、构造函数的比较" class="headerlink" title="1、构造函数的比较"></a>1、构造函数的比较</h4><p>HashMap：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashMap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity, <span class="hljs-keyword">float</span> loadFactor)</span> </span>&#123;
+    <span class="hljs-keyword">if</span> (initialCapacity &lt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal initial capacity: &quot;</span> +
+                                           initialCapacity);
+    <span class="hljs-keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)
+        initialCapacity = MAXIMUM_CAPACITY;
+    <span class="hljs-keyword">if</span> (loadFactor &lt;= <span class="hljs-number">0</span> || Float.isNaN(loadFactor))
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal load factor: &quot;</span> +
+                                           loadFactor);
+    <span class="hljs-keyword">this</span>.loadFactor = loadFactor;
+    <span class="hljs-keyword">this</span>.threshold = tableSizeFor(initialCapacity);
+&#125;
+​
+<span class="hljs-comment">//该方法返回大于等于cap的最小2次幂的整数</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> <span class="hljs-title">tableSizeFor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> cap)</span> </span>&#123;
+    <span class="hljs-keyword">int</span> n = cap - <span class="hljs-number">1</span>;
+    n |= n &gt;&gt;&gt; <span class="hljs-number">1</span>;
+    n |= n &gt;&gt;&gt; <span class="hljs-number">2</span>;
+    n |= n &gt;&gt;&gt; <span class="hljs-number">4</span>;
+    n |= n &gt;&gt;&gt; <span class="hljs-number">8</span>;
+    n |= n &gt;&gt;&gt; <span class="hljs-number">16</span>;
+    <span class="hljs-keyword">return</span> (n &lt; <span class="hljs-number">0</span>) ? <span class="hljs-number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="hljs-number">1</span>;
+&#125;</code></pre></div>
+
+<p>HashMap的底层数组大小必须为2^n，主要是为了后面数据量大时减小hash冲突。</p>
+<p>Hashtable：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Hashtable</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity, <span class="hljs-keyword">float</span> loadFactor)</span> </span>&#123;
+    <span class="hljs-keyword">if</span> (initialCapacity &lt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal Capacity: &quot;</span>+
+                                           initialCapacity);
+    <span class="hljs-keyword">if</span> (loadFactor &lt;= <span class="hljs-number">0</span> || Float.isNaN(loadFactor))
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal Load: &quot;</span>+loadFactor);
+​
+    <span class="hljs-keyword">if</span> (initialCapacity==<span class="hljs-number">0</span>)
+        initialCapacity = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">this</span>.loadFactor = loadFactor;
+    table = <span class="hljs-keyword">new</span> Entry&lt;?,?&gt;[initialCapacity];
+    threshold = (<span class="hljs-keyword">int</span>)Math.min(initialCapacity * loadFactor, MAX_ARRAY_SIZE + <span class="hljs-number">1</span>);
+&#125;
+​
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Hashtable</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">this</span>(<span class="hljs-number">11</span>, <span class="hljs-number">0.75f</span>);
+&#125;</code></pre></div>
+
+<p>Hashtable的长度可以是任意值，导致当底层数组长度为合数的时候，Hashtable的hash算法散射不均匀，容易产生hash冲突。所以，可以清楚的看到Hashtable的默认构造函数底层数组长度为11（质数）。原因可以看看这篇</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhishengqianjun/article/details/79087525?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&amp;dist_request_id=743237a1-2185-4f92-b696-4f3fd31e1746&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control">https://blog.csdn.net/zhishengqianjun/article/details/79087525?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&amp;dist_request_id=743237a1-2185-4f92-b696-4f3fd31e1746&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control</a></p>
+<h4 id="2、hash算法的区别"><a href="#2、hash算法的区别" class="headerlink" title="2、hash算法的区别"></a>2、hash算法的区别</h4><p>HashMap：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hash</span><span class="hljs-params">(Object key)</span> </span>&#123;
+    <span class="hljs-keyword">int</span> h;
+    <span class="hljs-keyword">return</span> (key == <span class="hljs-keyword">null</span>) ? <span class="hljs-number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="hljs-number">16</span>);
+&#125;
+<span class="hljs-comment">//手写的，源码在不存在这一句，但是原理是类似的，详情可以去看putVal方法</span>
+<span class="hljs-keyword">int</span> i = (table.length-<span class="hljs-number">1</span>) &amp; hash(key)</code></pre></div>
+
+<p>hash算法将 key 的 hash 值散射到数组中，</p>
+<p>1、合数2^n转换为2进制的数之后，最高位为1其余的位数都为0，比如16–&gt;10000，32–&gt;100000。那么，2^n-1转换为2进制后，所有的bit位都为1，比如31–&gt;11111，127–&gt;1111111。所以，hashcode与（2^n-1）做&amp;运算每一个bit位都可以保持原来的值。</p>
+<p>2、当hash()方法得到的值&lt;=（table.length-1）,其运算结果就在[0,table.length-1]范围内均匀散射。当hash()方法得到的值小于table.length-1的时候，运算结果就是该方法的原值。当hash()方法得到的值等于table.length-1的的时候，运算结果为0。</p>
+<p>3、当hash()得到的值&gt;(table.length-1)，此时table.length-1为较小的数，所以&amp;运算的结果还是在[0,table.length-1]之间。具体实现是这样的，table.length-1转化为2进制的数之后位数小于hash()方法得到的2进制数，所以它的高位只能用0去补齐，又由于&amp;运算的特性，只要有一个为0那么都为0，所以此时相当于转化为情况1。</p>
+<p>总结下就是在数组较小的时候，key 的 hash 值相对数组长度值来说较大，进行按位与操作时，数组的二进制会在前面补 0，然后操作结果实际上舍弃了hash值的高位部分。</p>
+<p>在数组越来越大之后，补的0也相应减少，所以总能够刚刚好匹配散射进数组。</p>
+<p>Hashtable：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">int</span> hash = key.hashCode();
+<span class="hljs-comment">//0x7FFFFFFF转换为10进制之后是Intger.MAX_VALUE,也就是2^31 - 1</span>
+<span class="hljs-keyword">int</span> index = (hash &amp; <span class="hljs-number">0x7FFFFFFF</span>) % tab.length;</code></pre></div>
+
+<p>可以看出Hashtable的hash算法首先使得hash的值小于等于整型数的最大值，再通过%运算实现均匀散射。</p>
+<p>由于计算机是底层的运算是基于2进制的，所以HashMap的hash算法使用&amp;运算代替%运算，在运算速度上明显HashMap的hash算法更优。</p>
+<h4 id="3、扩容的机制的区别"><a href="#3、扩容的机制的区别" class="headerlink" title="3、扩容的机制的区别"></a>3、扩容的机制的区别</h4><p>扩容的等后面再写</p>
+<h4 id="4、结构的区别"><a href="#4、结构的区别" class="headerlink" title="4、结构的区别"></a>4、结构的区别</h4><p>hashMap在jdk1.8之后采用了数组+链表+红黑树的结构，它规定在链表长度大于 8 的时候就讲链表转为红黑树，在小于 6 的时候变回链表。</p>
+<p>Hashtable则还是原来的数组+链表结构。</p>
+<p>以看出到jdk1.8 HashMap和Hashtable的区别越来越大，HashMap相较与之前的jdk做了很多的优化，最重要的是在内部实现结构上引进了红黑数还有扩容上的优化。Hashtable作为jdk1.2遗留下来的类，到jdk1.8没有大改，<strong>所以对数据的一致性要求较低的话可以使用ConcurrentHashMap来替代Hashtable</strong></p>
 
             </div>
             <hr>
@@ -346,7 +321,7 @@ ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
                     
                   </div>
                 
@@ -354,9 +329,9 @@ ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF%E5%B9%B2%E8%B4%A7/">技术干货</a>
+                      <a class="hover-with-bg" href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/">小知识点</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
+                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
                     
                   </div>
                 
@@ -369,18 +344,12 @@ ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/01/HashMap%E5%92%8CHashTable/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HashMap和HashTable</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/10/WSL2%20Ubuntu18.04%20DNS%20%E9%97%AE%E9%A2%98/">
-                        <span class="hidden-mobile">WSL2 Ubuntu18.04 DNS 问题（apt-get update失败）</span>
+                      <a href="/2021/01/10/%E6%A0%91%E8%8E%93%E6%B4%BE4B%20ubuntu18.04%20%E5%AE%89%E8%A3%85Docker/">
+                        <span class="hidden-mobile">树莓派4B ubuntu18.04 安装Docker</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
