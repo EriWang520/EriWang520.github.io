@@ -181,18 +181,20 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/01/HashMap%E5%92%8CHashTable/">HashMap和HashTable</a>
+        <a href="/2021/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">设计模式-工厂模式</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/01/HashMap%E5%92%8CHashTable/">
+        <a href="/2021/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
           
           
             
           
-          HashMap和HashTable这里总结下两者的区别。部分内容参考自：
-https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_suggestion&amp;type=content
-1、HashMap 是线程不安全的，在多线程下容易产生死循环。但是在单线程下效率较高。Hashtable线程安
+          设计模式-工厂模式参考：https://www.zhihu.com/question/27125796/answer/1615074467
+一、简单工厂
+简单工厂并没有在23种设计模式之中。
+缺点：
+简单工厂模式中的工厂是一个具体的类，而非接口或者抽象类，用switch-case 或者 if - else 来判断并返回对象实例。如果增加新的产品，就要增加新的 if-else, 这种方法扩展性比较差
         </a>
       </p>
 
@@ -200,8 +202,8 @@ https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-01 00:00" pubdate>
-              2021-03-01
+            <time datetime="2021-03-06 00:00" pubdate>
+              2021-03-06
             </time>
           </div>
         
@@ -219,7 +221,7 @@ https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_
             
               <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/">小知识点</a>
             
-              <a href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
             
           </div>
         
@@ -233,20 +235,18 @@ https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">HashMap和HashTable</a>
+        <a href="/2021/03/01/HashMap%E5%92%8CHashTable/">HashMap和HashTable</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+        <a href="/2021/03/01/HashMap%E5%92%8CHashTable/">
           
           
             
           
-          设计模式-工厂模式参考：https://www.zhihu.com/question/27125796/answer/1615074467
-一、简单工厂
-简单工厂并没有在23种设计模式之中。
-缺点：
-简单工厂模式中的工厂是一个具体的类，而非接口或者抽象类，用switch-case 或者 if - else 来判断并返回对象实例。如果增加新的产品，就要增加新的 if-else, 这种方法扩展性比较差
+          HashMap和HashTable这里总结下两者的区别。部分内容参考自：
+https://www.zhihu.com/search?q=hashmap%E5%92%8Chashtable&amp;utm_content=search_suggestion&amp;type=content
+1、HashMap 是线程不安全的，在多线程下容易产生死循环。但是在单线程下效率较高。Hashtable线程安
         </a>
       </p>
 
