@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>静态代码块详解</title>
+    <link href="/2021/03/13/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/"/>
+    <url>/2021/03/13/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="java静态代码块详解"><a href="#java静态代码块详解" class="headerlink" title="java静态代码块详解"></a>java静态代码块详解</h1><p>详细可以参考 <a href="https://blog.csdn.net/qq_35868412/article/details/89360250">https://blog.csdn.net/qq_35868412/article/details/89360250</a></p><p>执行顺序：</p><p><img src="https://gitee.com/ericw5200/image/raw/master/image-20210313103346922.png" alt="image-20210313103346922"></p><p>左边是在父类执行main()方法，右边是在子类中执行。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小知识点</tag>
+      
+      <tag>java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>equals() 和 ==</title>
     <link href="/2021/03/10/equals()%E5%92%8C==/"/>
     <url>/2021/03/10/equals()%E5%92%8C==/</url>
