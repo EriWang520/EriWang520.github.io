@@ -5,8 +5,8 @@
   
   <entry>
     <title>静态代码块详解</title>
-    <link href="/2021/03/13/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/"/>
-    <url>/2021/03/13/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/</url>
+    <link href="/2021/03/13/java%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E8%AF%A6%E8%A7%A3/"/>
+    <url>/2021/03/13/java%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E8%AF%A6%E8%A7%A3/</url>
     
     <content type="html"><![CDATA[<h1 id="java静态代码块详解"><a href="#java静态代码块详解" class="headerlink" title="java静态代码块详解"></a>java静态代码块详解</h1><p>详细可以参考 <a href="https://blog.csdn.net/qq_35868412/article/details/89360250">https://blog.csdn.net/qq_35868412/article/details/89360250</a></p><p>执行顺序：</p><p><img src="https://gitee.com/ericw5200/image/raw/master/image-20210313103346922.png" alt="image-20210313103346922"></p><p>左边是在父类执行main()方法，右边是在子类中执行。</p>]]></content>
     
